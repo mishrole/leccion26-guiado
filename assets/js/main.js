@@ -31,9 +31,15 @@ window.onload = function(){
 	var nombre = document.getElementById("name");
 	var apellido = document.getElementById("lastname");
 
-
 	var validateLetters = function(e){
+
 		var codigo = e.keyCode;
+		var length = this.value.length;
+
+		if(length == 1){
+			this.nextElementSibling.focus();
+		}
+
 		if((codigo>=97 && codigo<=122) || (codigo>=65 && codigo<=90) || codigo==39 || codigo==32){
 			spanAlert(this,"","none");
 			return true;
@@ -66,6 +72,30 @@ window.onload = function(){
 	}
 
 	numDni.onkeypress = validateDni;
+
+	var age = document.getElementById("age");
+
+	var validateAge = function(){
+
+		var inicio = new Date(age.value);
+		var actual = new Date();
+		var total = actual.getFullYear() - inicio.getFullYear();
+
+		var length = this.value.length;
+
+		if(length == 1){
+			this.nextElementSibling.focus();
+		}
+
+		if(total < 18){
+			spanAlert(age, "Debe ser mayor de edad", "inline-block");
+		}else{
+			spanAlert(age, "", "none");
+		}
+
+	}
+
+	age.onblur = validateAge
 
 	var celular = document.getElementById("cellphone");
 
@@ -114,14 +144,20 @@ window.onload = function(){
 
 	var verifyPassword = function(){
 
+		var length = this.value.length;
+
+		if(length == 1){
+			this.nextElementSibling.focus();
+		}
+
 		if(confirmar.value != contrasenia.value){
-			spanAlert(confirmar,"Las contraseñas deben coincidir","inline-block")
+			spanAlert(confirmar,"Las contraseñas deben coincidir","inline-block");
 		}else{
 			spanAlert(confirmar,"","none");
 		}
 	}
 
-	confirmar.onblur = verifyPassword
+	confirmar.onkeypress = verifyPassword
 }
 
 /*

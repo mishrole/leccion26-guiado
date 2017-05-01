@@ -1,0 +1,34 @@
+^[A-Z{1}a-z\u00C0-\u00ff\s]+
+
+/[A-Z\u00C0-\u00ff]{1}[a-z\u00C0-\u00ff\s]*/g
+
+/[A-Z\u00C0-\u00ff]{1}[a-z\u00C0-\u00ff]*/g
+
+var regLetras = /^[a-zA-Z]*$/;
+	var regMayus = /^[A-Z]{1}/;
+
+	//Campos obligatorios
+
+	if(nombre.value.length < 1){
+		alert("Escribe tu nombre")
+	}else if(nombre.value.search(regMayus)){
+		alert("La primera letra de tu nombre debe estar en mayúscula")
+	}else if(apellido.value.length < 1){
+		alert("Escribe tu apellido")
+	}else if(apellido.value.search(regMayus)){
+		alert("La primera letra de tu apellido debe estar en mayúscula")
+	}
+
+http://stackoverflow.com/questions/4113051/regex-that-finds-consecutive-words-with-first-letter-capitalized
+http://stackoverflow.com/questions/8274562/regex-to-check-if-the-first-character-is-uppercasehttp://stackoverflow.com/questions/2385701/regular-expression-for-first-and-last-name
+http://stackoverflow.com/questions/2385701/regular-expression-for-first-and-last-name
+http://www.forosdelweb.com/f18/expresion-regular-validando-primera-letra-1057706/
+http://stackoverflow.com/questions/6251463/regex-capitalize-first-letter-every-word-also-after-a-special-character-like-a
+http://stackoverflow.com/questions/36506776/regex-find-whole-sentence-with-first-letter-uppercase
+http://stackoverflow.com/questions/8411809/regular-expression-for-upper-case-letter-only-in-javascript
+http://stackoverflow.com/questions/7258375/latin-charcters-included-in-javascript-regex
+http://stackoverflow.com/questions/18812317/javascript-regex-for-special-characters
+http://stackoverflow.com/questions/17245810/allow-alphanumeric-with-spanish-regex-in-javascript
+http://stackoverflow.com/questions/6889963/regex-with-space-and-special-characters
+http://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
+http://stackoverflow.com/questions/4149276/javascript-camelcase-to-regular-form
